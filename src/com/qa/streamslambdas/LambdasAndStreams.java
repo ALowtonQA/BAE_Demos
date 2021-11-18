@@ -1,7 +1,6 @@
 package com.qa.streamslambdas;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -13,10 +12,10 @@ public class LambdasAndStreams {
 		List<String> myList = List.of("cat", "dog", "fish");
 		
 		// forEach w/ Lamba
-//		myList.forEach(element -> System.out.println(element));
+		myList.forEach(element -> System.out.println(element));
 
 		// forEach w/ some logic
-//		myList.forEach(element -> {if (element.equals("cat")) {System.out.println(element);}});
+		myList.forEach(element -> {if (element.equals("cat")) {System.out.println(element);}});
 		
 		// One way to create a stream
 		Stream<String> animalStream = Stream.of("cat", "dog", "fish");
@@ -26,17 +25,17 @@ public class LambdasAndStreams {
 		Stream<Integer> numbersStream = numbers.stream();
 		
 		// forEach w/ stream
-//		numbersStream.forEach(number -> System.out.println(number));
+		numbersStream.forEach(number -> System.out.println(number));
 		
 		// filter (intermediate operation)
-//		animalStream.filter(animal -> animal.contains("a")).forEach(animal -> System.out.println(animal));
+		animalStream.filter(animal -> animal.contains("a")).forEach(animal -> System.out.println(animal));
 		
 		// map (intermediate operation)
-//		animalStream.map(animal -> animal.toUpperCase()).forEach(animal -> System.out.println(animal));
+		animalStream.map(animal -> animal.toUpperCase()).forEach(animal -> System.out.println(animal));
 		
 		// collectors (terminal operation)
 		List<String> myNewAnimalStream = animalStream.map(animal -> animal.toUpperCase()).collect(Collectors.toList());
-//		System.out.println(myNewAnimalStream);
+		System.out.println(myNewAnimalStream);
 		
 		// reduce (terminal operation)
 		List<Integer> nums = Arrays.asList(1, 2, 3, 4, 5);
