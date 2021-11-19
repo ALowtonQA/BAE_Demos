@@ -10,27 +10,27 @@ public enum Planet {
     URANUS(8.686e+25, 2.5559e7),
     NEPTUNE(1.024e+26, 2.4746e7);
 
-    private final double mass;
-    private final double radius;
+    private final double MASS;
+    private final double RADIUS;
 
     Planet(double mass, double radius) {
-        this.mass = mass;
-        this.radius = radius;
+        this.MASS = mass;
+        this.RADIUS = radius;
     }
 
     public double getMass() {
-		return mass;
+		return MASS;
 	}
 
 	public double getRadius() {
-		return radius;
+		return RADIUS;
 	}
 
 	//universal gravitational constant  (m3 kg-1 s-2)
     public static final double GRAVITATIONAL_CONSTANT = 6.67300E-11;
 
     public double surfaceGravity() {
-        return GRAVITATIONAL_CONSTANT * mass / (radius * radius);
+        return GRAVITATIONAL_CONSTANT * MASS / (RADIUS * RADIUS);
     }
 
     public double surfaceWeight(double otherMass) {
